@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brighter Merchant — Brighter Shores Merchant Overlay</title>
+  <meta name="description" content="Desktop overlay for Brighter Shores that calculates the most efficient merchant bounty routes in real-time.">
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="icon.png" alt="Brighter Merchant" width="36" height="36">
+        <span>Brighter Merchant</span>
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#docs">Docs</a>
+        <a href="#faq">FAQs</a>
+        <a href="https://github.com/joenye/BrighterMerchant" class="github-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://discord.gg/mQdKPjDT" class="discord-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+          Discord
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-split">
+        <div class="hero-text">
+          <h1>Optimize your Merchant runs. Effortlessly.</h1>
+          <p>A desktop overlay for <a href="https://www.brightershores.com/">Brighter Shores</a> that calculates the most efficient merchant bounty routes in real-time.</p>
+          <div class="hero-buttons">
+            <a href="#download" class="btn btn-primary">Download</a>
+            <a href="https://github.com/joenye/BrighterMerchant" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://discord.gg/mQdKPjDT" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              Discord
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>🔍 Real-time OCR</h3>
+            <p>Automatically detects bounties from your game screen — no manual input needed.</p>
+          </div>
+          <div class="feature">
+            <h3>🗺️ Optimal Pathfinding</h3>
+            <p>Calculates the best route to maximize your KP per hour.</p>
+          </div>
+          <div class="feature">
+            <h3>🎯 Overlay Display</h3>
+            <p>Shows next steps directly on your game window without alt-tabbing.</p>
+          </div>
+          <div class="feature">
+            <h3>📊 Session Tracking</h3>
+            <p>Track your KP earned and bounties completed over time.</p>
+          </div>
+        </div>
+
+        <div class="screenshot-grid">
+          <div class="screenshot-item" onclick="openLightbox('screenshot-1.jpg', 'Optimal bounty selection with route overlay')">
+            <img src="screenshot-1.jpg" alt="Brighter Merchant showing optimal bounty selection">
+            <p>Optimal bounty selection with route overlay</p>
+          </div>
+          <div class="screenshot-item" onclick="openLightbox('screenshot-2.jpg', 'Edit mode for configuring overlay positions')">
+            <img src="screenshot-2.jpg" alt="Brighter Merchant edit mode">
+            <p>Edit mode for configuring overlay positions</p>
+          </div>
+        </div>
+
+        <div class="screenshot-grid" style="margin-top: 30px;">
+          <div class="screenshot-item" onclick="openLightbox('screenshot-3-4-combined.jpg', 'Session tracking and settings panel')">
+            <img src="screenshot-3-4-combined.jpg" alt="Brighter Merchant session tracking and settings">
+            <p>Session tracking and settings panel</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+      <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <section id="download" class="download">
+      <div class="container">
+        <h2>Download</h2>
+        <p class="version">Latest version: <span id="version">loading...</span></p>
+        <div class="download-grid">
+          <a id="download-macos" href="#" class="download-card">
+            <svg class="platform-icon" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <h3>macOS</h3>
+            <p>Apple Silicon (M1/M2/M3+)</p>
+            <span class="file-type">.dmg</span>
+          </a>
+          <a id="download-windows-setup" href="#" class="download-card">
+            <svg class="platform-icon" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+              <path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/>
+            </svg>
+            <h3>Windows</h3>
+            <p>64-bit installer</p>
+            <span class="file-type">setup.exe</span>
+          </a>
+          <a id="download-windows-portable" href="#" class="download-card">
+            <svg class="platform-icon" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+              <path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/>
+            </svg>
+            <h3>Windows</h3>
+            <p>64-bit portable</p>
+            <span class="file-type">portable.exe</span>
+          </a>
+          <a id="download-linux" href="#" class="download-card">
+            <svg class="platform-icon" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+              <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.002c-.06-.135-.12-.2-.18-.264-.14-.135-.28-.135-.42-.2-.14-.066-.26-.134-.4-.2-.12-.067-.24-.135-.36-.268-.12-.066-.21-.2-.27-.333-.12-.066-.18-.135-.24-.268-.06-.066-.12-.2-.12-.333-.06-.135-.06-.2-.06-.267 0-.066 0-.133.06-.2v-.067c-.12.066-.24.2-.36.333-.12.135-.24.268-.36.468-.12.135-.24.268-.3.4-.06.135-.12.267-.12.4-.06.135-.06.267-.06.4 0 .066 0 .133.06.2v.066c.06.135.12.2.18.334.06.066.12.2.24.267.06.067.12.135.24.2.06.067.18.135.24.2.12.067.24.135.36.2.12.067.24.135.42.2.12.067.24.135.42.2.12.067.3.135.42.2.18.067.36.135.54.2.18.067.36.135.54.268.18.066.36.2.48.333.18.135.3.267.42.4.12.135.24.267.3.4.12.135.18.267.24.4.06.135.12.267.12.4.06.135.06.267.06.4 0 .066 0 .133-.06.2v.066c-.06.135-.12.267-.18.4-.12.135-.24.267-.36.4-.18.135-.36.267-.54.334-.24.135-.42.2-.66.267-.24.067-.48.135-.72.135-.24.067-.48.067-.72.067-.24 0-.48 0-.66-.067-.24-.067-.42-.067-.6-.135-.18-.066-.36-.133-.48-.2-.18-.066-.3-.133-.42-.2-.12-.066-.24-.133-.3-.2-.12-.066-.18-.133-.24-.2-.06-.066-.12-.133-.12-.2-.06-.066-.06-.133-.06-.2v-.066c0-.067.06-.135.06-.2.06-.067.06-.135.12-.2.06-.067.12-.135.18-.2.06-.067.12-.135.24-.2.06-.067.18-.135.24-.2.12-.067.24-.135.36-.2.12-.067.24-.135.42-.2.12-.067.3-.135.42-.2.18-.067.36-.135.54-.2.18-.067.36-.135.54-.2.18-.067.36-.135.48-.2.18-.067.3-.135.42-.2.12-.067.24-.135.3-.2.12-.067.18-.135.24-.2.06-.067.12-.135.12-.2.06-.067.06-.135.06-.2v-.067c0-.066-.06-.133-.06-.2-.06-.066-.12-.133-.18-.2-.12-.066-.24-.133-.36-.2-.18-.066-.36-.133-.54-.2-.24-.066-.42-.133-.66-.2-.24-.066-.48-.133-.72-.2-.24-.066-.48-.133-.72-.133-.24-.067-.48-.067-.72-.067-.24 0-.42 0-.66.067-.18 0-.36.066-.54.133-.18.067-.36.133-.48.2-.18.067-.3.133-.42.2-.12.067-.24.133-.3.2-.12.067-.18.133-.24.2-.06.067-.12.133-.12.2-.06.067-.06.133-.06.2v.067c0 .066.06.133.06.2.06.066.12.133.18.2.12.066.24.133.36.2.18.066.36.133.54.2.24.066.42.133.66.2.24.066.48.133.72.2.24.066.48.133.72.133.24.067.48.067.72.067.24 0 .42 0 .66-.067.18 0 .36-.066.54-.133.18-.067.36-.133.48-.2.18-.067.3-.133.42-.2.12-.067.24-.133.3-.2.12-.067.18-.133.24-.2.06-.067.12-.133.12-.2.06-.067.06-.133.06-.2v-.067c0-.066-.06-.133-.06-.2-.06-.066-.12-.133-.18-.2-.12-.066-.24-.133-.36-.2-.18-.066-.36-.133-.54-.2-.24-.066-.42-.133-.66-.2-.24-.066-.48-.133-.72-.2-.24-.066-.48-.133-.72-.133-.24-.067-.48-.067-.72-.067-.24 0-.42 0-.66.067-.18 0-.36.066-.54.133-.18.067-.36.133-.48.2-.18.067-.3.133-.42.2-.12.067-.24.133-.3.2-.12.067-.18.133-.24.2-.06.067-.12.133-.12.2-.06.067-.06.133-.06.2v.067c0 .066.06.133.06.2.06.066.12.133.18.2.12.066.24.133.36.2.18.066.36.133.54.2.24.066.42.133.66.2.24.066.48.133.72.2.24.066.48.133.72.133.24.067.48.067.72.067.24 0 .42 0 .66-.067.18 0 .36-.066.54-.133.18-.067.36-.133.48-.2.18-.067.3-.133.42-.2.12-.067.24-.133.3-.2.12-.067.18-.133.24-.2.06-.067.12-.133.12-.2.06-.067.06-.133.06-.2v-.067c0-.066-.06-.133-.06-.2-.06-.066-.12-.133-.18-.2-.12-.066-.24-.133-.36-.2-.18-.066-.36-.133-.54-.2-.24-.066-.42-.133-.66-.2-.24-.066-.48-.133-.72-.2-.24-.066-.48-.133-.72-.133-.24-.067-.48-.067-.72-.067z"/>
+            </svg>
+            <h3>Linux</h3>
+            <p>AppImage (X11 only)</p>
+            <span class="file-type">.AppImage</span>
+          </a>
+        </div>
+        <p class="download-note">
+          <a id="view-release" href="https://github.com/joenye/BrighterMerchant/releases/latest" class="btn btn-secondary btn-small">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View Release on GitHub
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section id="docs" class="docs">
+      <div class="container">
+        <h2>Docs</h2>
+        <div class="docs-grid">
+          <a href="https://github.com/joenye/BrighterMerchant#installation" class="docs-card">
+            <h3>📥 Installation</h3>
+            <p>Platform-specific setup instructions for macOS, Windows, and Linux.</p>
+          </a>
+          <a href="https://github.com/joenye/BrighterMerchant#usage" class="docs-card">
+            <h3>📖 Usage</h3>
+            <p>How to use Brighter Merchant, OCR settings, and keyboard shortcuts.</p>
+          </a>
+          <a href="https://github.com/joenye/BrighterMerchant/blob/main/docs/SECURITY.md" class="docs-card">
+            <h3>🔒 Security</h3>
+            <p>How to verify release integrity and security information.</p>
+          </a>
+          <a href="https://github.com/joenye/BrighterMerchant/blob/main/docs/CONTRIBUTING.md" class="docs-card">
+            <h3>🤝 Contributing</h3>
+            <p>Development setup and contribution guidelines.</p>
+          </a>
+          <a href="https://github.com/joenye/BrighterMerchant#building-from-source" class="docs-card">
+            <h3>🔧 Building</h3>
+            <p>Build Brighter Merchant from source code.</p>
+          </a>
+          <a href="https://github.com/joenye/BrighterMerchant#acknowledgements" class="docs-card">
+            <h3>🙏 Acknowledgements</h3>
+            <p>Credits and third-party libraries used.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2>FAQs</h2>
+        <div class="faq-item">
+          <h3>Is this against the Brighter Shores terms of service?</h3>
+          <p>No. According to the <a href="https://brightershores.com/rules">Brighter Shores rules</a>, Brighter Merchant does not violate any rules under "Cheating". It's purely an application that reads your screen and tells you what to do — you still have to perform all the clicks yourself.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is this secure? The app needs to read my screen? That doesn't seem safe.</h3>
+          <p>Brighter Merchant is completely open source, so you can verify exactly what it does. The app only captures specific regions of the Brighter Shores application window — nothing else on your screen. It makes no network calls except for checking for updates. You can review the source code, build it yourself, or verify the official builds match the published code. See the <a href="https://github.com/joenye/BrighterMerchant/blob/main/docs/SECURITY.md">Security documentation</a> for details on verifying releases.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I report a bug or request a feature?</h3>
+          <p>Please report bugs and feature requests on <a href="https://github.com/joenye/BrighterMerchant/issues">GitHub Issues</a>. Before creating a new issue, check if it already exists. For bugs, include your OS and Brighter Merchant version along with steps to reproduce. If you have questions or want to discuss ideas, join our <a href="https://discord.gg/mQdKPjDT">Discord server</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>CC BY-NC 4.0 License · <a href="https://github.com/joenye/BrighterMerchant">Source on GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Lightbox functionality
+    function openLightbox(imageSrc, caption) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      
+      lightboxImg.src = imageSrc;
+      lightboxCaption.textContent = caption;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox(event) {
+      // Only close if clicking the background or close button
+      if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox.classList.contains('active')) {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

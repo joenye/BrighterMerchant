@@ -1,0 +1,163 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - run: npx tsc
+      - name: Inject git commit hash
+        run: sed -i '' "s/__GIT_COMMIT__/$(git rev-parse --short HEAD)/g" dist/app/version.js
+      - run: npm run build:mac
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos-arm64
+          path: release/*.dmg
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - run: npx tsc
+      - name: Inject git commit hash
+        shell: bash
+        run: sed -i "s/__GIT_COMMIT__/$(git rev-parse --short HEAD)/g" dist/app/version.js
+      - run: npm run build:win
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-x64
+          path: release/*.exe
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install Linux dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxcb1-dev
+      - run: npm ci
+      - run: npx tsc
+      - name: Inject git commit hash
+        run: sed -i "s/__GIT_COMMIT__/$(git rev-parse --short HEAD)/g" dist/app/version.js
+      - run: npm run build:linux
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-x64
+          path: release/*.AppImage
+
+  create-release:
+    needs: [build-macos, build-windows, build-linux]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate release notes
+        run: |
+          # Start with changelog
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+          if [ -n "$PREV_TAG" ]; then
+            echo "## What's Changed" > release-notes.md
+            echo "" >> release-notes.md
+            git log ${PREV_TAG}..HEAD --pretty=format:"- %s (%h)" >> release-notes.md
+          else
+            echo "Initial release" > release-notes.md
+          fi
+          
+          # Append static release info
+          cat >> release-notes.md << 'RELEASE_EOF'
+
+          ## Verifying Release Integrity
+
+          This release was built automatically by GitHub Actions.
+
+          To verify:
+          1. Download `CHECKSUMS.txt` and your platform's release file
+          2. Run: `shasum -a 256 -c CHECKSUMS.txt` (macOS/Linux) or `certutil -hashfile <file> SHA256` (Windows)
+
+          ## Downloads
+
+          | Platform | File | Notes |
+          |----------|------|-------|
+          | macOS (Apple Silicon) | `BrighterMerchant-<version>-macos-arm64.dmg` | Drag-to-install |
+          | Windows | `BrighterMerchant-<version>-windows-x64-setup.exe` | Installer |
+          | Windows | `BrighterMerchant-<version>-windows-x64-portable.exe` | No install needed |
+          | Linux | `BrighterMerchant-<version>-linux-x64.AppImage` | Requires X11 |
+
+          ## Installation
+
+          **macOS**: Open the `.dmg`, drag Brighter Merchant to Applications, then run `sudo xattr -cr /Applications/BrighterMerchant.app` to bypass Gatekeeper.
+
+          **Windows**: Run the installer or use the portable version directly.
+
+          **Linux**: `chmod +x BrighterMerchant-linux-x64.AppImage && ./BrighterMerchant-linux-x64.AppImage`
+
+          > ⚠️ **Linux users**: Brighter Merchant requires X11. Wayland is not supported. If using Wayland, try: `GDK_BACKEND=x11 ./BrighterMerchant-linux-x64.AppImage`
+          RELEASE_EOF
+          # Remove leading whitespace from heredoc
+          sed -i 's/^          //' release-notes.md
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Prepare release assets
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          mkdir -p release
+          cp artifacts/macos-arm64/*.dmg release/BrighterMerchant-${VERSION}-macos-arm64.dmg 2>/dev/null || true
+          cp artifacts/linux-x64/*.AppImage release/BrighterMerchant-${VERSION}-linux-x64.AppImage 2>/dev/null || true
+          
+          # Windows has two exe files:
+          # 1. "Brighter Merchant Setup X.X.X.exe" - the installer
+          # 2. "Brighter Merchant X.X.X.exe" - the portable version (no "Setup" in name)
+          
+          # Find and copy setup installer (has "Setup" in name)
+          for f in artifacts/windows-x64/*Setup*.exe; do
+            [ -f "$f" ] && cp "$f" release/BrighterMerchant-${VERSION}-windows-x64-setup.exe && break
+          done
+          
+          # Find and copy portable (does NOT have "Setup" in name)
+          for f in artifacts/windows-x64/*.exe; do
+            if [ -f "$f" ] && [[ ! "$f" =~ Setup ]]; then
+              cp "$f" release/BrighterMerchant-${VERSION}-windows-x64-portable.exe
+              break
+            fi
+          done
+          
+          # Generate checksums
+          cd release
+          sha256sum * > CHECKSUMS.txt
+          cat CHECKSUMS.txt
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: Brighter Merchant ${{ github.ref_name }}
+          body_path: release-notes.md
+          files: release/*

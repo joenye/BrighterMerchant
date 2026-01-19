@@ -1,0 +1,15 @@
+# Brighter Merchant Development Rules
+
+## Git Conventions
+
+### Commit Messages
+- MUST use Conventional Commits format: `type: description`
+- Valid types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `style`, `perf`
+- Examples:
+  - `feat: add new bounty type support`
+  - `fix: correct pathfinding for locked areas`
+  - `docs: update installation instructions`
+  - `refactor: simplify OCR processing`
+
+### Git Operations
+- NEVER use `git push --force` or `git push -f`

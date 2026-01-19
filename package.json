@@ -1,0 +1,144 @@
+{
+  "name": "brighter-merchant",
+  "version": "0.9.1",
+  "description": "Merchant bounty optimizer overlay for Brighter Shores",
+  "author": {
+    "name": "Joe Nye"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joenye/BrighterMerchant.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "brighter-shores",
+    "merchant",
+    "bounty",
+    "overlay",
+    "electron"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "install": "node-gyp-build",
+    "postinstall": "electron-builder install-app-deps",
+    "prebuild": "prebuildify --napi",
+    "start": "npx tsc && electron dist/app/main.js",
+    "start:rebuild": "node-gyp rebuild && npx tsc && electron dist/app/main.js",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder --mac --win --linux"
+  },
+  "files": [
+    "package.json",
+    "dist/index.d.ts",
+    "dist/index.js",
+    "dist/index.js.map",
+    "binding.gyp",
+    "src/lib",
+    "prebuilds"
+  ],
+  "devDependencies": {
+    "@types/node": "22.x.x",
+    "@types/throttle-debounce": "5.x.x",
+    "electron": "^39.2.7",
+    "electron-builder": "^24.6.0",
+    "prebuildify": "6.x.x",
+    "to-ico": "^1.1.5",
+    "typescript": "5.x.x"
+  },
+  "dependencies": {
+    "@datastructures-js/priority-queue": "^6.3.2",
+    "node-gyp-build": "4.x.x",
+    "sharp": "^0.33.5",
+    "tesseract.js": "^7.0.0",
+    "throttle-debounce": "5.x.x"
+  },
+  "gypfile": true,
+  "build": {
+    "appId": "com.joenye.brightermerchant",
+    "productName": "Brighter Merchant",
+    "publish": null,
+    "directories": {
+      "output": "release"
+    },
+    "icon": "assets/icon",
+    "files": [
+      "dist/**/*",
+      "prebuilds/**/*",
+      "build/Release/*.node",
+      "package.json",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hmap,jsbundle,jsbundle.meta,min.js.map,ts,map}",
+      "!**/node_modules/tesseract.js/{docs,scripts}/**/*",
+      "!**/node_modules/tesseract.js-core/tesseract-core.wasm",
+      "!**/node_modules/tesseract.js-core/tesseract-core.wasm.js",
+      "!**/node_modules/tesseract.js-core/tesseract-core.js",
+      "!**/node_modules/tesseract.js-core/tesseract-core-lstm.wasm",
+      "!**/node_modules/tesseract.js-core/tesseract-core-lstm.wasm.js",
+      "!**/node_modules/tesseract.js-core/tesseract-core-lstm.js"
+    ],
+    "extraMetadata": {
+      "main": "dist/app/main.js"
+    },
+    "asarUnpack": [
+      "**/node_modules/sharp/**/*",
+      "**/node_modules/@img/**/*",
+      "**/node_modules/tesseract.js/src/**/*",
+      "**/node_modules/tesseract.js-core/tesseract-core-simd*.wasm",
+      "**/node_modules/tesseract.js-core/tesseract-core-simd*.js",
+      "**/node_modules/tesseract.js-core/tesseract-core-relaxedsimd*.wasm",
+      "**/node_modules/tesseract.js-core/tesseract-core-relaxedsimd*.js",
+      "prebuilds/**/*",
+      "build/**/*"
+    ],
+    "npmRebuild": true,
+    "electronLanguages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "identity": null,
+      "category": "public.app-category.utilities"
+    },
+    "appImage": {
+      "executableArgs": [
+        "--sandbox"
+      ]
+    }
+  }
+}
