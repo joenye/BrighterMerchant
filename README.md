@@ -2,8 +2,6 @@
 
 [![Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.gg/mQdKPjDT)
 
-> **⚠️ Important Notice:** As of the updated [Brighter Shores rules](https://brightershores.com/rules), using software that reads the game display is now prohibited. **Use at your own risk.** This project remains open source for educational purposes.
-
 <p align="center">
   <img src="assets/icon.png" alt="Brighter Merchant Logo" width="128" height="128">
 </p>
@@ -131,14 +129,6 @@ The app auto-detects native Tesseract if installed. You can override this in Set
 </details>
 
 ## FAQs
-
-### Is this against the Brighter Shores terms of service?
-
-**Yes, as of the updated rules.** The [Brighter Shores rules](https://brightershores.com/rules) now explicitly prohibit "using or creating software which reads the display or memory or network traffic of the Brighter Shores client."
-
-Brighter Merchant reads the game display using OCR to detect bounties, which violates this rule. **Use at your own risk.** We respect the developers' decision and understand if you choose not to use this tool.
-
-This project will remain open source for educational purposes.
 
 ### Is this secure? The app needs to read my screen? That doesn't seem safe.
 
