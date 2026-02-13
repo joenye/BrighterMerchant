@@ -43,9 +43,9 @@
     "@types/node": "22.x.x",
     "@types/throttle-debounce": "5.x.x",
     "electron": "^39.2.7",
-    "electron-builder": "^24.6.0",
+    "electron-builder": "^26.7.0",
     "prebuildify": "6.x.x",
-    "to-ico": "^1.1.5",
+    "to-ico": "^1.0.1",
     "typescript": "5.x.x"
   },
   "dependencies": {
