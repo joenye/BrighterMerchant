@@ -422,13 +422,13 @@ export class OCRProcessor {
     const bountyRarities: { [bountyKey: string]: 'uncommon' | 'rare' | 'epic' | null } = {};
     for (const [indexStr, bountyKey] of Object.entries(this.activeBounties)) {
       const index = Number(indexStr);
-      if (this.activeBountyRarities[index]) {
+      if (index in this.activeBountyRarities) {
         bountyRarities[bountyKey] = this.activeBountyRarities[index];
       }
     }
     for (const [indexStr, bountyKey] of Object.entries(this.boardBounties)) {
       const index = Number(indexStr);
-      if (this.boardBountyRarities[index]) {
+      if (index in this.boardBountyRarities) {
         bountyRarities[bountyKey] = this.boardBountyRarities[index];
       }
     }
