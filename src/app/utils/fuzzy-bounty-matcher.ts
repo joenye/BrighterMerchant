@@ -118,8 +118,8 @@ export function fuzzyMatchBounty(ocrText: string): string | null {
 export function fuzzyMatchBountyWithDebug(ocrText: string): FuzzyMatchResult {
   const text = ocrText.replace(/\s/g, '').toLowerCase();
   
-  // Check for quantity indicator (6, 6x, x6, etc.)
-  const hasQuantity = /6|x6|6x/.test(text);
+  // Check for quantity indicator (6, 6x, x6, etc.) or rarity multipliers (2x, 3x, 4x)
+  const hasQuantity = /6|x6|6x|2x|3x|4x/.test(text);
   if (!hasQuantity) {
     return { bountyKey: null, topMatches: [] };
   }
